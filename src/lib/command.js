@@ -4,7 +4,8 @@ const openai = require('./openai/openai.js')
 const helpCommand = (client, msg, params) => {
   const message = "Command yang tersedia: \n" +
                   "*!help* - menampilkan halaman help\n" +
-                  "*!sticker* - convert gambar ke sticker\n\n" +
+                  "*!sticker* - convert gambar ke sticker\n" +
+                  "*!chatgpt* - tanya chatgpt\n\n" +
                   "untuk detail tiap command gunakan:\n" +
                   "*!help <command>*\n" +
                   "contoh:\n" +

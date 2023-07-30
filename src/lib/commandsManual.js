@@ -19,6 +19,18 @@ module.exports = (params) => {
                 "pastikan yang dikirim adalah gambar";
                 
       break;
+    case 'chatgpt':
+    case '!chatgpt':
+      message = "Jawab pertanyaan kamu dengan bantuan OpenAI ChatGPT\n" +
+                "perintah ini menggunakan api yang disediakan oleh chatgp " +
+                "dengan pilihan layanan gratis, sehingga mungkin terdapat beberapa keterbatasan\n\n" +
+                "Penggunaan:\n" +
+                "*!chatgpt <prompt>* \n\n" +
+                "*keterangan:*\n" +
+                "prompt: pertanyaan yang akan diberikan ke chatgpt (wajib diisi) \n\n" +
+                "*contoh command:*\n" +
+                "!chatgpt cara membuat http request menggunakan javascript"
+      break;
     default:
       message = `command ${command} tidak ditemukan`;
       break;
