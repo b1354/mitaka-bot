@@ -1,23 +1,16 @@
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const {messageHandler} = require('./eventHandler.js');
-const qrcodeTerminal = require('qrcode-terminal');
-const qrcode = require('qrcode');
+const qrcode = require('qrcode-terminal');
 const path = require('path');
 const client = new Client({
-  // authStrategy: new LocalAuth(),
+  //authStrategy: new LocalAuth(),
   puppeteer: {
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   }
 });
 
 client.on('qr', (qr) => {
-  qrcodeTerminal.generate(qr, {small: true});
-  qrcode.toFile(path.join(__dirname,'../public/qr.png'), qr,{
-    errorCorrectionLevel: 'H'
-  }, err => {
-    if (err) throw err;
-    console.log('qr_code generated');
-  });
+  qrcode.generate(qr, {small: true});
 });
 
 client.on('ready', () => {
