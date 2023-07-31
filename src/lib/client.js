@@ -3,7 +3,7 @@ const {messageHandler} = require('./eventHandler.js');
 const qrcode = require('qrcode-terminal');
 const path = require('path');
 const client = new Client({
-  //authStrategy: new LocalAuth(),
+  authStrategy: new LocalAuth(),
   puppeteer: {
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   }
