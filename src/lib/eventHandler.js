@@ -16,6 +16,9 @@ const messageHandler = (msg) => {
     case "!chatgpt":
       command.chatgpt(client, msg, params);
       break;
+    case "!qr":
+      command.generateQr(client, msg, params);
+      break;
     default:
       command.unknownPrefix(client, msg, prefix);
       break;

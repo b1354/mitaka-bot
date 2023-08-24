@@ -1,11 +1,16 @@
+const qrcode = require('qrcode');
+const { MessageMedia } = require('whatsapp-web.js');
+
 const commandsManual = require('./commandsManual.js');
-const openai = require('./openai/openai.js')
+const openai = require('./openai/openai.js');
+
 
 const helpCommand = (client, msg, params) => {
   const message = "Command yang tersedia: \n" +
                   "*!help* - menampilkan halaman help\n" +
                   "*!sticker* - convert gambar ke sticker\n" +
-                  "*!chatgpt* - tanya chatgpt\n\n" +
+                  "*!chatgpt* - tanya chatgpt\n" +
+                  "*!qr* - menggenerate qr dari teks\n\n" +
                   "untuk detail tiap command gunakan:\n" +
                   "*!help <command>*\n" +
                   "contoh:\n" +
@@ -60,11 +65,37 @@ const chatgpt = async(client, msg, params) => {
   }
 }
 
+const generateQr = async (client, msg, params) => {
+  const text = params.join(" ");
+  const chat = msg.getChat();
+
+  if (!text || text == " ") {
+    client.sendMessage(msg.from, "masukan text yang ingin di ubah ke qr");
+    return;
+  }
+
+  qrcode.toDataURL(text, {version: 5, width: 480},function(err, data){
+    if (err) {
+      client.sendMessage(msg.from, "terjadi error");
+      return;
+    }
+    let base64Image = data.split(';base64,').pop();
+    const media = new MessageMedia('image/png', base64Image);
+    msg.reply(media);
+  })
+}
+
 const unknownPrefix = (client, msg, prefix) => {
   const message = msg.body.toLowerCase();
-  if (message == "hi" || message == "hi mitaka" || message == "p") {
-    client.sendMessage(msg.from, `Hi, Selamat datang di Mitaka-Bot,\nketik "!help" untuk list command`);
-    return;
+  switch (message) {
+    case "hi":
+    case "hello":
+    case "p":
+    case "test":
+      client.sendMessage(msg.from, `Hi, Selamat datang di Mitaka-Bot,\nketik "!help" untuk list command`);
+      break;
+    default:
+      break;
   }
   
   if (prefix) {
@@ -76,5 +107,6 @@ module.exports = {
   helpCommand,
   stickerCommand,
   chatgpt,
+  generateQr,
   unknownPrefix
 }

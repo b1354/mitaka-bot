@@ -29,7 +29,17 @@ module.exports = (params) => {
                 "*keterangan:*\n" +
                 "prompt: pertanyaan yang akan diberikan ke chatgpt (wajib diisi) \n\n" +
                 "*contoh command:*\n" +
-                "!chatgpt cara membuat http request menggunakan javascript"
+                "!chatgpt cara membuat http request menggunakan javascript";
+      break;
+    case 'qr':
+    case '!qr':
+      message = "buat qr code berdasarkan input yang dimasukan\n\n" +
+                "Penggunaan:\n" +
+                "*!qr <data>*\n\n" +
+                "*Keterangan*:\n" +
+                "data: merupakan teks yang akan dirubah ke qr code (wajib diisi)\n\n" +
+                "*contoh command:*\n" +
+                "!qr github.com/b1354/mitaka-bot";
       break;
     default:
       message = `command ${command} tidak ditemukan`;
