@@ -1,7 +1,43 @@
 
-# MITAKA BOT (masih dalam proses pengembangan)
+# MITAKA BOT
 
-Bot sederhana menggunakan NodeJs, dengan library ``whatsapp-web``
+<p align="center">
+  <img src="mitaka.jpg" alt="mitaka" width=225>
+  <br>
+  <a href="https://wwebjs.dev/">
+    <img alt="Dynamic JSON Badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fb1354%2Fmitaka-bot%2Fmaster%2Fpackage.json&query=%24.dependencies%5B%22whatsapp-web.js%22%5D&label=whatsapp%20web.js&labelColor=%23258f41&color=%23f5f5f5">
+  </a>
+  <br>
+  <i> Bot WhatsApp sederhana menggunakan NodeJs, </br>
+      dengan library <code>whatsapp-web.js</code>.
+  </i>
+<p>
+
+
+# List Perintah
+
+<table>
+  <tr>
+    <td><b>!help</b></td>
+    <td>menampilkan halaman help</td>
+  </tr>
+  <tr>
+    <td><b>!help &lt;command&gt</b></td>
+    <td>menampilkan cara penggunaan suatu command.</td>
+  </tr>
+  <tr>
+    <td><b>!sticker</b></td>
+    <td>mengubah gambar menjadi sticker.</td>
+  </tr>
+  <tr>
+    <td><b>!chatgpt &lt;prompt&gt;</b></td>
+    <td>menjawab pertanyaan dengan bantuan openAI ChatGpt.</td>
+  </tr>
+  <tr>
+    <td><b>!qr &lt;text&gt;</b></td>
+    <td>membuat qr code dari text yang dimasukan.</td>
+  </tr>
+</table>
 
 # Instalasi
 
