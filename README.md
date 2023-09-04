@@ -101,7 +101,7 @@
   [cara menambahkan token chatgpt](#chat-gpt-token)
 
 # Chat GPT Token
-- tambahkan token chat-gpt dengna menyalin file ``env-example``
+- tambahkan token chat-gpt dengna menyalin file ``env-example`` dan mengubahya menjadi ``.env``
   ```
   OPEN_AI_TOKEN = <isi token disini>
   ```
