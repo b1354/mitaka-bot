@@ -43,7 +43,7 @@
 
 > __NOTE :__
   jika ingin menginstall bot di server, atau sistem tanpa GUI seperti linux shell
-  gunakan cara ini [(instalasi ke OS tanpa GUI)](#instalasi-tanpa-gui)
+  gunakan cara ini [(instalasi di OS tanpa GUI)](#instalasi-di-os-tanpa-gui)
 
 - buka cmd, lalu clone repository ini
   ```sh
@@ -74,7 +74,7 @@
   dan mulai kembali secara otomatis dalam mode ini,
   sehingga tidak perlu mengetik ``node .`` lagi.
 
-# Instalasi Tanpa GUI
+# Instalasi di OS Tanpa GUI
 - buka cmd, lalu clone repository ini
   ```sh
   git clone https://github.com/b1354/mitaka-bot
