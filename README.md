@@ -20,6 +20,10 @@ Bot sederhana menggunakan NodeJs, dengan library ``whatsapp-web``
   npm install
   ```
 
+- Tambahkan token chatgpt
+  
+  [cara menambahkan token chatgpt](#chat-gpt-token)
+
 - Jalankan program
   ```sh
   node .
@@ -56,6 +60,11 @@ Bot sederhana menggunakan NodeJs, dengan library ``whatsapp-web``
   })
   ```
 
+- Tambahkan token chatgpt
+
+  [cara menambahkan token chatgpt](#chat-gpt-token)
+
+# Chat GPT Token
 - tambahkan token chat-gpt dengna menyalin file ``env-example``
   ```
   OPEN_AI_TOKEN = <isi token disini>

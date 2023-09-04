@@ -1,9 +1,15 @@
 const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
-const {messageHandler} = require('./eventHandler.js');
+const messageHandler = require('./messageHandler.js');
+const environment = process.env.BOT_ENVIRONMENT
+
+const productionArgs = {
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+}
 
 const client = new Client({
-  authStrategy: new LocalAuth()
+  authStrategy: new LocalAuth(),
+  pupeteer: (environment == 'production') ? productionArgs : {}
 });
 
 client.on('qr', (qr) => {

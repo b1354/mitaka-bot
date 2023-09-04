@@ -1,5 +1,5 @@
 require('dotenv').config();
-const client = require("./lib/client.js");
+const client = require("./client/client.js");
 
 console.log("Preparing bot,");
 console.log("Please wait...");
