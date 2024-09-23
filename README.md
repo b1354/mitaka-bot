@@ -1,6 +1,17 @@
 
 # MITAKA BOT
 
+> [!Caution]
+>
+> **Repositori ini sudah tidak di kembangkan lagi**.
+>
+> Mungkin akan terdapat beberapa masalah terutama masalah pada libraries/framework yang mengakibatkan bot ini tidak dapat digunakan. **Mengapa hal ini dapat terjadi?** bot ini menggunakan library whatsapp-web.js dimana library ini menggunakan [puppeteer](https://pptr.dev/) untuk berkerja, whatsapp sendiri kerap kali melakukan update/penyesuaian pada aplikasi mereka, perubahan inilah yang mengakibatkan library ini tidak dapat berjalan dengan semestinya.
+>
+
+> [!Warning]
+>
+> Tidak di anjurkan untuk menggunakan akun/nomor utama untuk menggunakan bot ini. **Penggunaan bot pada whatsapp beresiko membuat akun/nomor terblokir**
+
 <p align="center">
   <img src="mitaka.jpg" alt="mitaka" width=225>
   <br>
@@ -15,8 +26,7 @@
 
 
 # List Perintah
-
-<table>
+<table align=center>
   <tr>
     <td><b>!help</b></td>
     <td>menampilkan halaman help</td>
@@ -41,11 +51,11 @@
 
 # Instalasi
 
-> __NOTE :__
+> [!NOTE]
   jika ingin menginstall bot di server, atau sistem tanpa GUI seperti linux shell
   gunakan cara ini [(instalasi di OS tanpa GUI)](#instalasi-di-os-tanpa-gui)
 
-- buka cmd, lalu clone repository ini
+- buka terminal, lalu clone repository ini
   ```sh
   git clone https://github.com/b1354/mitaka-bot
   cd mitaka-bot
@@ -69,10 +79,11 @@
   ```sh
   npm run dev
   ```
-  > __NOTE:__
-  program yang berjalan akan langsung direstart ketika perubahan di save
-  dan mulai kembali secara otomatis dalam mode ini,
-  sehingga tidak perlu mengetik ``node .`` lagi.
+  
+> __NOTE:__
+> program yang berjalan akan langsung direstart ketika perubahan di save dan mulai kembali secara otomatis dalam mode ini, sehingga
+> tidak perlu mengetik ``node .`` lagi.
+
 
 # Instalasi di OS Tanpa GUI
 - buka cmd, lalu clone repository ini
@@ -87,7 +98,7 @@
 
   ```
 
-- tambahkan konfigurasi ``no-sandbox`` pada client
+- tambahkan konfigurasi ``no-sandbox`` pada ``src/client/client.js``
   ```javascript
   const client = new Client({
     puppeter: {
@@ -105,8 +116,9 @@
   ```
   OPEN_AI_TOKEN = <isi token disini>
   ```
-  >__NOTE:__
-  saat memasukan token tidak perlu diapit dengan tanda kutip
+
+> __NOTE:__
+> saat memasukan token tidak perlu diapit dengan tanda kutip
  
 - install dependencies yang dibutuhkan
   ```sh
